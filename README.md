@@ -20,3 +20,8 @@ CUMPLIMIENTO REQUERIMIENTOS DE LA PRUEBA PARCIAL
 # Captura 4 - Mostrando datos del pais 
 
 ![](https://github.com/jorgmoli97/parcialmovil/blob/main/capturas/Screenshot_1629433814.png)
+
+# Captura 5 - Mostrando datos de otro pais 
+
+![](https://github.com/jorgmoli97/parcialmovil/blob/main/capturas/USA.png)
+
