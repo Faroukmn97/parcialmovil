@@ -23,7 +23,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import org.json.JSONArray;
 
 public class ProcesActivity extends AppCompatActivity implements OnMapReadyCallback{
-    private TextView txtPAIS;
+    private TextView txtPAIS, txtCodeISO2, txtCodeISONum, txtCodeISO3, txtTelPref;
     private ImageView imgpais;
     private GoogleMap mMap;
     // variables para mantener los datos
@@ -37,14 +37,13 @@ public class ProcesActivity extends AppCompatActivity implements OnMapReadyCallb
         getdata();
         txtPAIS.setText(pais);
         Glide.with(this).load("http://www.geognos.com/api/en/countries/flag/"+Alpha2Code+".png").into(imgpais);
+        txtCodeISO2.setText( "CodeISO2:  " + CodeISO2);
+        txtCodeISONum.setText("CodeISONum:  "+CodeISONum);
+        txtCodeISO3.setText("CodeISO3:  "+ CodeISO3);
+        txtTelPref.setText("Capital:  "+capital);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
-
-
-
-
     }
 
     @Override
@@ -53,10 +52,9 @@ public class ProcesActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         Log.d("Ce",Center);
-        LatLng ltLng = new LatLng(-1.0127291289943696, -79.4694318818125);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(ltLng, 17);
+        LatLng ltLng = new LatLng(24, 90);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(ltLng, 300);
         mMap.animateCamera(cameraUpdate);
-
 
         PolylineOptions lines = new PolylineOptions()
                 .add(new LatLng(Double.parseDouble(geonorth),Double.parseDouble(geowest)))
@@ -70,6 +68,12 @@ public class ProcesActivity extends AppCompatActivity implements OnMapReadyCallb
 
     private void init(){
         txtPAIS = (TextView) findViewById(R.id.txtPAIS);
+
+        txtCodeISO2 = (TextView) findViewById(R.id.txtCodeISO2);
+        txtCodeISONum = (TextView) findViewById(R.id.txtCodeISONum);
+        txtCodeISO3 = (TextView) findViewById(R.id.txtCodeISO3);
+        txtTelPref = (TextView) findViewById(R.id.txtTelPref);
+
         imgpais = (ImageView) findViewById(R.id.imgpais);
         preferences = getSharedPreferences("Preferences", MODE_PRIVATE);
     }

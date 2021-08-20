@@ -30,14 +30,50 @@
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="415dp"
-        android:layout_height="369dp"
+        android:layout_width="410dp"
+        android:layout_height="318dp"
         android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".ProcesActivity" />
+
+    <TextView
+        android:id="@+id/txtCodeISO2"
+        android:layout_width="336dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map" />
+
+    <TextView
+        android:id="@+id/txtCodeISONum"
+        android:layout_width="336dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodeISO2" />
+
+    <TextView
+        android:id="@+id/txtCodeISO3"
+        android:layout_width="336dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodeISONum" />
+
+    <TextView
+        android:id="@+id/txtTelPref"
+        android:layout_width="336dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCodeISO3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
