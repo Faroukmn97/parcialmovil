@@ -52,8 +52,9 @@ public class ProcesActivity extends AppCompatActivity implements OnMapReadyCallb
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         mMap.getUiSettings().setZoomControlsEnabled(true);
         Log.d("Ce",Center);
-        LatLng ltLng = new LatLng(24, 90);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(ltLng, 300);
+        String parte[] = Center.replace("[","").replace("]","").split(",");
+        LatLng ltLng = new LatLng(Double.parseDouble(parte[0]), Double.parseDouble(parte[1]));
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(ltLng, 3);
         mMap.animateCamera(cameraUpdate);
 
         PolylineOptions lines = new PolylineOptions()
